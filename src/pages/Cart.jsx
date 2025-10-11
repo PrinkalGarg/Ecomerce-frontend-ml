@@ -48,7 +48,7 @@ function Cart() {
             >
               <div className="flex items-center space-x-4 w-full sm:w-auto">
                 <img
-                  src={productdetails.images[0]}
+                  src={productdetails.images[0]?.url}
                   alt="Product 1"
                   className="w-20 h-20 object-cover rounded"
                 />

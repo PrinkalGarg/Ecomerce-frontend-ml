@@ -7,13 +7,14 @@ function OrderProduct({ productId, size, quantity }) {
   const [productData, setProductData] = useState(null);
 
   useEffect(() => {
-    
     const fetchProduct = async () => {
       try {
         const response = await axios.post(
-          `${backendUrl}/api/product/listsingle`, // ✅ Fixed URL
+          `${backendUrl}/api/product/listsingle`,
           { _id: productId }
         );
+        console.log(response.data);
+        
         setProductData(response.data);
       } catch (error) {
         console.error(
@@ -27,16 +28,38 @@ function OrderProduct({ productId, size, quantity }) {
   }, [productId, backendUrl]);
 
   if (!productData) {
-    return <div className="p-2">Loading product...</div>;
+    return <div className="p-4 text-gray-500 text-center">Loading product...</div>;
   }
 
   return (
-    <div className="border p-4 rounded-md mb-3 shadow bg-white">
-      <h2 className="text-lg font-semibold">{productData.name}</h2>
-      <p><strong>Size:</strong> {size}</p>
-      <p><strong>Quantity:</strong> {quantity}</p>
-      <p><strong>Price:</strong> ₹{productData.product.price}</p>
-      <img src={productData.product.images[0]} alt={productData.name} className="w-28 h-28 object-cover mt-2" />
+    <div className="flex flex-col md:flex-row items-center border rounded-lg shadow-lg bg-white p-4 hover:shadow-xl transition-shadow duration-300 mb-4">
+      {/* Product Image */}
+      <div className="w-28 h-28 md:w-32 md:h-32 flex-shrink-0 rounded-lg overflow-hidden border border-gray-200">
+        <img
+          src={productData.product.images[0]?.url}
+          alt={productData.name}
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+      {/* Product Info */}
+      <div className="flex-1 ml-0 md:ml-6 mt-3 md:mt-0">
+        <h2 className="text-lg md:text-xl font-semibold text-gray-900">
+          {productData.name}
+        </h2>
+
+        <div className="flex flex-wrap gap-4 mt-2 text-gray-700">
+          <p>
+            <span className="font-medium">Size:</span> {size}
+          </p>
+          <p>
+            <span className="font-medium">Quantity:</span> {quantity}
+          </p>
+          <p>
+            <span className="font-medium">Price:</span> ₹{productData.product.price}
+          </p>
+        </div>
+      </div>
     </div>
   );
 }

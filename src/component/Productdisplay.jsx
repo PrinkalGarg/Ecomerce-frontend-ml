@@ -8,8 +8,10 @@ function Product({id, name, price}) {
   useEffect(() => {
     const product = products.find((item) => item._id == id);
     if (product) {
+      console.log(product.images[0].url);
       
-      setSelectImage(product.images[0]);
+      
+      setSelectImage(product.images[0].url);
     }
   }, [products]);
   return (
