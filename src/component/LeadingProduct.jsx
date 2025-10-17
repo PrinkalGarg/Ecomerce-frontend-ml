@@ -4,7 +4,7 @@ import Product from './Productdisplay';
 
 function LeadingProduct() {
     const {products}=useContext(ShopContext);
-    const leadingProducts=products.slice(0,50);
+    const leadingProducts=products.slice(0,10);
     
   return (
     <>
