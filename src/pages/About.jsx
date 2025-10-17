@@ -1,5 +1,5 @@
 import React from 'react';
-
+import modelImage from "../assets/images/model.jpg";
 function About() {
   return (
     <div className="bg-gray-100 mt-10 py-12">
@@ -16,7 +16,7 @@ function About() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="relative">
               <img
-                src="../assets/images/model.jpg"
+                src={modelImage}
                 alt="Clothing Product"
                 className="w-full h-auto object-cover rounded-lg shadow-lg"
               />
