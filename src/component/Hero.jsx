@@ -7,7 +7,7 @@ function Hero() {
       
         <div className='w-fit flex flex-col  place-items-start items-center p-3 font-serif '>
             <h1 className='md:text-xl text-lg md:pl-4'>___Our BestSeller</h1>
-            <p className='md:text-3xl text-xl md:font-bold font-semibold  md:pl-4'>Explore the world of fashion</p>
+            <p className='md:text-3xl text-xl md:font-bold font-semibold  md:pl-4'>Explore the world of Products</p>
             <p className='md:text-xl text-lg md:pl-4'>Shop Now____</p>
         </div>
         <img src='../model.jpg' alt='model' className='md:w-[28rem] md:h-[28rem] w-48 h-48 '/>
