@@ -1,5 +1,5 @@
 import React from 'react';
-import modelImage from "../assets/images/model.jpg";
+import modelImage from "../assets/model.jpg";
 function About() {
   return (
     <div className="bg-gray-100 mt-10 py-12">
