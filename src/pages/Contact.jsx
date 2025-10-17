@@ -28,7 +28,7 @@ function Contact() {
             </div>
             <div className="relative">
               <img
-                src="../public/office.jpg"
+                src="../office.jpg"
                 alt="Our Office"
                 className="w-full h-auto object-cover rounded-lg shadow-lg"
               />
@@ -45,7 +45,7 @@ function Contact() {
               <img src="../public/insta.png" alt="Instagram" className="w-8 h-8" />
             </a>
             <a href="https://twitter.com/yourbrand" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-700">
-              <img src="../public/twitter.png" alt="Twitter" className="w-8 h-8 " />
+              <img src="../twitter.png" alt="Twitter" className="w-8 h-8 " />
             </a>
           </div>
         </div>
